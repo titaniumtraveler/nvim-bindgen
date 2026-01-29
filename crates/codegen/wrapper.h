@@ -1,0 +1,22 @@
+#include "nvim/memory.c"
+
+#include "nvim/api/autocmd.c"
+#include "nvim/api/buffer.c"
+#include "nvim/api/command.c"
+#include "nvim/api/deprecated.c"
+#include "nvim/api/events.c"
+#include "nvim/api/extmark.c"
+#include "nvim/api/options.c"
+#include "nvim/api/tabpage.c"
+#include "nvim/api/ui.c"
+#include "nvim/api/vim.c"
+#include "nvim/api/vimscript.c"
+#include "nvim/api/win_config.c"
+#include "nvim/api/window.c"
+
+#include "luajit-2.1/luajit.h"
+
+#include "nvim/api/private/converter.c"
+#include "nvim/api/private/dispatch.c"
+#include "nvim/api/private/helpers.c"
+#include "nvim/api/private/validate.c"

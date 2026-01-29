@@ -1,0 +1,8 @@
+[submodule "vendor/rust-bindgen"]
+	path = vendor/rust-bindgen
+	url = https://github.com/titaniumtraveler/rust-bindgen
+    branch = "fork/main"
+[submodule "vendor/neovim"]
+	path = vendor/neovim
+	url = https://github.com/neovim/neovim
+	branch = master

@@ -1,0 +1,45 @@
+ Get all autocommands that match the corresponding {opts}.
+
+ These examples will get autocommands matching ALL the given criteria:
+
+ ```lua
+ -- Matches all criteria
+ autocommands = vim.api.nvim_get_autocmds({
+   group = 'MyGroup',
+   event = {'BufEnter', 'BufWinEnter'},
+   pattern = {'*.c', '*.h'}
+ })
+
+ -- All commands from one group
+ autocommands = vim.api.nvim_get_autocmds({
+   group = 'MyGroup',
+ })
+ ```
+
+ NOTE: When multiple patterns or events are provided, it will find all the autocommands that
+ match any combination of them.
+
+ @param opts Dict with at least one of the following:
+             - buffer: (integer) Buffer number or list of buffer numbers for buffer local autocommands
+             |autocmd-buflocal|. Cannot be used with {pattern}
+             - event: (vim.api.keyset.events|vim.api.keyset.events[])
+               event or events to match against |autocmd-events|.
+             - id: (integer) Autocommand ID to match.
+             - group: (string|table) the autocommand group name or id to match against.
+             - pattern: (string|table) pattern or patterns to match against |autocmd-pattern|.
+             Cannot be used with {buffer}
+ @return Array of autocommands matching the criteria, with each item
+             containing the following fields:
+             - buffer: (integer) the buffer number.
+             - buflocal: (boolean) true if the autocommand is buffer local.
+             - command: (string) the autocommand command. Note: this will be empty if a callback is set.
+             - callback: (function|string|nil): Lua function or name of a Vim script function
+               which is executed when this autocommand is triggered.
+             - desc: (string) the autocommand description.
+             - event: (vim.api.keyset.events) the autocommand event.
+             - id: (integer) the autocommand id (only when defined with the API).
+             - group: (integer) the autocommand group id.
+             - group_name: (string) the autocommand group name.
+             - once: (boolean) whether the autocommand is only run once.
+             - pattern: (string) the autocommand pattern.
+               If the autocommand is buffer local |autocmd-buffer-local|:
