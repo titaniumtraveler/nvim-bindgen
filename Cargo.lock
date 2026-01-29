@@ -134,7 +134,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "nvim-codegen"
+name = "nvim-bindgen"
 version = "0.1.0"
 dependencies = [
  "bindgen",
@@ -147,7 +147,7 @@ dependencies = [
 name = "nvim-sys"
 version = "0.1.0"
 dependencies = [
- "nvim-codegen",
+ "nvim-bindgen",
 ]
 
 [[package]]

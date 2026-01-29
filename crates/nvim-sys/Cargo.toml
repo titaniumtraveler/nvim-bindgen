@@ -7,4 +7,4 @@ license.workspace = true
 [dependencies]
 
 [build-dependencies]
-nvim-codegen.workspace = true
+nvim-bindgen.workspace = true
